@@ -1,0 +1,5 @@
+E:\Working\KSG\Project\Mobile\Mobile.Object\bin\Debug\Mobile.Object.dll
+E:\Working\KSG\Project\Mobile\Mobile.Object\bin\Debug\Mobile.Object.pdb
+E:\Working\KSG\Project\Mobile\Mobile.Object\obj\Debug\ResolveAssemblyReference.cache
+E:\Working\KSG\Project\Mobile\Mobile.Object\obj\Debug\Mobile.Object.dll
+E:\Working\KSG\Project\Mobile\Mobile.Object\obj\Debug\Mobile.Object.pdb

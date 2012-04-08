@@ -1,0 +1,143 @@
+﻿@{    
+    Layout = @ViewBag.Layout;
+}
+@if (false)
+{    
+<script src="/Scripts/jquery-1.5.1-vsdoc.js" type="text/javascript"></script>
+}
+<!-- Bang thong bao -->
+<div id="message_board" class="message">
+    <ul class="error"></ul>
+    <ul class="warning"></ul>
+</div>
+
+<!-- Role list -->
+<div>
+    @Html.Partial("_RoleList")
+</div>
+<input type="button" name="name" value=" " id="btnCreateRole" />
+<!-- Role form -->
+<div id="role_form">
+    @Html.Partial("_RoleForm")
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        urlListRole = "/role/admin/GetRoleList";
+        urlDeleteRole = "/role/admin/delete"
+        urlSaveRole = "/role/admin/saverole";
+
+        elementFormRoleList = "form_role_list_partial";
+        BuildRoleList(elementFormRoleList);
+        $("#" + elementFormRoleList).jtable("load");
+
+        BuildRoleFormPopup();
+        $("#btnCreateRole").click(function () {
+            OpenRoleForm();
+        });
+
+    });
+
+    function BuildRoleList(element) {
+        $('#' + element).jtable({
+            paging: true,
+            pageSize: 10,
+            sorting: true,
+            defaultSorting: 'RoleID ASC',
+            actions: {
+                listAction: urlListRole
+            },
+            fields: {
+                RoleID: {
+                    title: 'RoleID'
+                },
+                //            RoleName: {
+                //                title: 'Role Name'
+                //            },
+                Edit: {
+                    title: "",
+                    display: function (data) {
+                        var editBtn = $("<a class='command-button command-button-edit'><a/>");
+                        editBtn.click(function () {
+                            //OpenRoleForm();
+                            //                        var db = new DataBindingScript.DataBinding();
+                            //                        db.bindData(data.record, "role_form_partial");
+                        });
+                        return editBtn;
+                    }
+                },
+                Delete: {
+                    title: "",
+                    display: function (data) {
+                        var deleteBtn = $("<a class='command-button command-button-delete'><a/>");
+                        deleteBtn.click(function (event) {
+                            if (confirm("Bạn có chắc muốn xoá mục này không?")) {
+                                //                            var urlDeleteAction = '';
+                                $.ajax({
+                                    url: urlDeleteRole,
+                                    type: "POST",
+                                    data: JSON.stringify({ 'roleId': data.record.RoleID }),
+                                    datatype: "json",
+                                    contentType: "application/json charset=utf-8",
+                                    success: function (result) {
+                                        if (result.success == 1) {
+                                            $("#" + elementFormPermissionList).jtable("reload");
+                                        }
+                                        else {
+                                            alert("Xoá role không thành công");
+                                            if (result.errormessages != null && result.errormessages.length > 0) {
+                                                SetDataToErrorFormWithTmpl(result.errormessages, $("#message_board").find("ul.error"), true);
+                                            }
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("error");
+                                    }
+                                });
+                            }
+                        })
+                        return deleteBtn;
+                    }
+                }
+            }
+        });
+    }
+
+    function BuildRoleFormPopup() {
+        $("#role_form").dialog({
+            autoOpen: false,
+            resizable: true,
+            height: 400,
+            width: 450,
+            modal: true,
+            buttons: {
+                OK: function (event) {
+//                    SavePermission(function () {
+//                        $("#" + elementFormPermissionList).jtable("load");
+//                    });
+                },
+                Cancel: function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    }
+
+    function OpenRoleForm() {
+        $("#role_form").dialog("open");
+    }
+
+    function CloseRoleForm() {
+        $("#role_form").dialog("close");
+    }
+
+    function ClearRoleForm() {
+
+    }
+
+</script>
+
+
+

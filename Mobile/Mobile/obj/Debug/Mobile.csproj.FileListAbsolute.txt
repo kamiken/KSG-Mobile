@@ -1,0 +1,16 @@
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.pdb
+E:\Working\KSG\Project\Mobile\Mobile\obj\Debug\ResolveAssemblyReference.cache
+E:\Working\KSG\Project\Mobile\Mobile\obj\Debug\Mobile.dll
+E:\Working\KSG\Project\Mobile\Mobile\obj\Debug\Mobile.pdb
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Core.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Object.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Framework.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Data.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\EntityFramework.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Core.pdb
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Object.pdb
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Framework.pdb
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Data.pdb
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Business.dll
+E:\Working\KSG\Project\Mobile\Mobile\bin\Mobile.Business.pdb

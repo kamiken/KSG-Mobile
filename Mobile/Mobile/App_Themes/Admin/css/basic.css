@@ -1,0 +1,31 @@
+/*
+ impleModal Basic Modal Dialog
+*/
+.confirm-dialog  
+{
+    color:#333; background-color:#ffffff; border:4px solid #444; padding:12px;
+
+}
+.confirm-dialog .inner { 
+    PADDING-RIGHT: 20px;PADDING-LEFT: 20px; 
+    PADDING-BOTTOM: 11px;BACKGROUND: url(../images/box.png) no-repeat left bottom; 
+    FLOAT: left;MARGIN: 0px 0px -20px 0px;WIDTH: 290px;PADDING-TOP: 0px;
+} 
+.confirm-dialog .base { 
+    BORDER-TOP: #ddd 1px solid;BACKGROUND: url(img/base.png) no-repeat left bottom; 
+    PADDING-BOTTOM: 4px;MARGIN-LEFT: -11px;MARGIN-RIGHT: -11px; 
+    PADDING-TOP: 4px;TEXT-ALIGN: center;
+}
+.confirm-dialog H2 { 
+    FONT-WEIGHT: bold;FONT-SIZE: 1.25em;COLOR: #f60;TEXT-ALIGN: center;
+} 
+.confirm-dialog input { 
+    
+}     
+.close { 
+    background:url(../images/Popup/x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;
+}   
+.modalBackground {
+    background-color:Gray; filter:alpha(opacity=70); opacity:0.7;
+}
+

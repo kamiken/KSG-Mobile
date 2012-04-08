@@ -1,0 +1,114 @@
+﻿@*@using Kamiken.Framework*@
+
+
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/App_Themes/Admin/css/screen.css")" rel="stylesheet" type="text/css" />     
+
+    <link href="/Scripts/syntaxhighligher/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/syntaxhighligher/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/Content/themes/base/jquery.ui.core.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/JTable/themes/standard/jtable_standard_base.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/JTable/themes/standard/blue/jtable_blue.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/themes/custom-theme/jquery-ui-1.8.18.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+<div class="content_wrapper">
+    <div id="header">
+        <div id="logo">
+            @*<img src="/App_Themes/Admin/images/logo.png" alt="logo"/>*@
+        </div>
+        <div id="search">
+            <form id="search_form" name="search_form" method="get">
+                <input type="text" id="q" name="q" title="Search" class="search noshadow"/>
+                
+            </form>
+        </div>
+		<div id="account_info">
+            @Html.Partial("_AccountInfo")
+		</div>
+	</div>
+    @*<a href="javascript:;" id="show_menu" title="Show slidebar">&raquo;</a>
+    <div id="left_menu">
+		<a href="javascript:;" id="hide_menu" title="Hide slidebar">&laquo;</a>
+		<ul id="main_menu">
+			<li><a href="/"><img src="/upload/images/icon_home.png" alt="Home"/>Home</a></li>
+			<li>
+				<a id="menu_pages" href=""><img src="/upload/images/icon_pages.png" alt="Pages"/>Pages</a>
+				<ul>
+					<li><a href="">Add new Pages</a></li>
+					<li><a href="">Edit Pages</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href=""><img src="/upload/images/icon_posts.png" alt="Posts"/>Posts</a>
+			</li>
+			<li>
+				<a href=""><img src="/upload/images/icon_media.png" alt="Media"/>Media</a>
+				<ul>
+					<li><a href="">Add new Media</a></li>
+					<li><a href="">Edit Media</a></li>
+					<li><a href="">Delete Media</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href=""><img src="/upload/images/icon_users.png" alt="Users"/>Membership</a>
+				<ul>
+					<li><a href="@Url.Action("Index", "Admin", new { area = "User" })">User</a></li>
+                    <li><a href="@Url.Action("Index", "Admin", new { area = "Role" })">Role</a></li>
+                    <li><a href="@Url.Action("Index", "Admin", new { area = "Permission" })">Permission</a></li>
+				</ul>	
+			</li>
+            <li>
+                <a href="javascript:;">Hệ thống</a>
+                <ul>
+                    <li><a href="@Url.Action("Index","Configuration")">Cấu hình hệ thống</a></li>
+                </ul>
+            </li>
+		</ul>
+	</div>*@
+    <div id="content">
+        <div class="inner">
+            @RenderBody()
+        </div>
+
+        <br class="clear"/>
+        <div id="footer">
+		    &copy; Copyright 2012 by Kamiken - Hua Dai Phong
+	    </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+<script src="/Scripts/syntaxhighligher/shCore.js" type="text/javascript"></script>
+<script src="/Scripts/syntaxhighligher/shBrushCSharp.js" type="text/javascript"></script>
+<script src="/Scripts/syntaxhighligher/shBrushCss.js" type="text/javascript"></script>
+<script src="/Scripts/syntaxhighligher/shBrushJScript.js" type="text/javascript"></script>
+<script src="/Scripts/syntaxhighligher/shBrushSql.js" type="text/javascript"></script>
+<script src="/Scripts/syntaxhighligher/shBrushXml.js" type="text/javascript"></script>
+<script src="/Scripts/JTable/jtablesite.js" type="text/javascript"></script>
+<script src="/Scripts/JTable/jquery.jtable.js" type="text/javascript"></script>
+<script src="/Scripts/Mobile/mobile-common.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="/Scripts/DataBindingScript.js" type="text/javascript"></script>
+@*<script src="/Scripts/ModalPopup/js/jquery.simplemodal.js" type="text/javascript"></script>
+<script src="/App_Themes/Admin/js/custom.js" type="text/javascript"></script>
+<script src="/Scripts/KSG/ksg-common.js" type="text/javascript"></script>
+*@
+
+<script src="/Scripts/jquery.tmpl.min.js" type="text/javascript"></script>
+<script id="template_message" type="text/x-jquery-tmpl">     
+    <li>${Message}</li>
+</script>

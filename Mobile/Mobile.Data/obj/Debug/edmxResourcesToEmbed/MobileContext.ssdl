@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mobile.Data.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MobileDataStoreContainer">
+    <EntitySet Name="Advertising" EntityType="Mobile.Data.Store.Advertising" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdvertisingCategory" EntityType="Mobile.Data.Store.AdvertisingCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article" EntityType="Mobile.Data.Store.Article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArticleCategory" EntityType="Mobile.Data.Store.ArticleCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArticleComment" EntityType="Mobile.Data.Store.ArticleComment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attribute" EntityType="Mobile.Data.Store.Attribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AttributeValue" EntityType="Mobile.Data.Store.AttributeValue" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="Mobile.Data.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyOnlineSupport" EntityType="Mobile.Data.Store.CompanyOnlineSupport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyProfile" EntityType="Mobile.Data.Store.CompanyProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyProfileProperty" EntityType="Mobile.Data.Store.CompanyProfileProperty" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contact" EntityType="Mobile.Data.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customer" EntityType="Mobile.Data.Store.Customer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerContact" EntityType="Mobile.Data.Store.CustomerContact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Error" EntityType="Mobile.Data.Store.Error" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FriendRequest" EntityType="Mobile.Data.Store.FriendRequest" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Friends" EntityType="Mobile.Data.Store.Friends" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InputType" EntityType="Mobile.Data.Store.InputType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Instance" EntityType="Mobile.Data.Store.Instance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstanceImage" EntityType="Mobile.Data.Store.InstanceImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InvitationFriend" EntityType="Mobile.Data.Store.InvitationFriend" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Manufacturer" EntityType="Mobile.Data.Store.Manufacturer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaCategory" EntityType="Mobile.Data.Store.MediaCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaFile" EntityType="Mobile.Data.Store.MediaFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaFileType" EntityType="Mobile.Data.Store.MediaFileType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaImage" EntityType="Mobile.Data.Store.MediaImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaImageCategory" EntityType="Mobile.Data.Store.MediaImageCategory" store:Type="Tables" store:Schema="dbo" store:Name="MediaImageCategory">
+      <DefiningQuery>SELECT 
+      [MediaImageCategory].[CategoryID] AS [CategoryID], 
+      [MediaImageCategory].[ParentCategoryID] AS [ParentCategoryID], 
+      [MediaImageCategory].[CategoryName] AS [CategoryName], 
+      [MediaImageCategory].[Description] AS [Description], 
+      [MediaImageCategory].[ImageUrl] AS [ImageUrl], 
+      [MediaImageCategory].[OrderIndex] AS [OrderIndex], 
+      [MediaImageCategory].[IsActived] AS [IsActived], 
+      [MediaImageCategory].[IsDeleted] AS [IsDeleted], 
+      [MediaImageCategory].[CreateedDate] AS [CreateedDate], 
+      [MediaImageCategory].[CreatedBy] AS [CreatedBy], 
+      [MediaImageCategory].[ModifiedDate] AS [ModifiedDate], 
+      [MediaImageCategory].[ModifiedBy] AS [ModifiedBy], 
+      [MediaImageCategory].[DeletedDate] AS [DeletedDate], 
+      [MediaImageCategory].[DeletedBy] AS [DeletedBy], 
+      [MediaImageCategory].[CompanyID] AS [CompanyID]
+      FROM [dbo].[MediaImageCategory] AS [MediaImageCategory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Message" EntityType="Mobile.Data.Store.Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageFolder" EntityType="Mobile.Data.Store.MessageFolder" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageRecipient" EntityType="Mobile.Data.Store.MessageRecipient" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageType" EntityType="Mobile.Data.Store.MessageType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Module" EntityType="Mobile.Data.Store.Module" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OnlineSupportType" EntityType="Mobile.Data.Store.OnlineSupportType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="Mobile.Data.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductCategory" EntityType="Mobile.Data.Store.ProductCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductImage" EntityType="Mobile.Data.Store.ProductImage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RepairVoucher" EntityType="Mobile.Data.Store.RepairVoucher" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RepairVoucherDetail" EntityType="Mobile.Data.Store.RepairVoucherDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Solution" EntityType="Mobile.Data.Store.Solution" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SolutionError" EntityType="Mobile.Data.Store.SolutionError" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StatisticVisitor" EntityType="Mobile.Data.Store.StatisticVisitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Store" EntityType="Mobile.Data.Store.Store" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemCompanyConfig" EntityType="Mobile.Data.Store.SystemCompanyConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemConfig" EntityType="Mobile.Data.Store.SystemConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemModule" EntityType="Mobile.Data.Store.SystemModule" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemPermission" EntityType="Mobile.Data.Store.SystemPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemRole" EntityType="Mobile.Data.Store.SystemRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemRolePermission" EntityType="Mobile.Data.Store.SystemRolePermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemRoleUser" EntityType="Mobile.Data.Store.SystemRoleUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUser" EntityType="Mobile.Data.Store.SystemUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUserPermission" EntityType="Mobile.Data.Store.SystemUserPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Warranty" EntityType="Mobile.Data.Store.Warranty" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Article_Comment_Article" Association="Mobile.Data.Store.FK_Article_Comment_Article">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="ArticleComment" EntitySet="ArticleComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_OnlineSupport_Company" Association="Mobile.Data.Store.FK_Company_OnlineSupport_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyOnlineSupport" EntitySet="CompanyOnlineSupport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_OnlineSupport_Online_Support_Type" Association="Mobile.Data.Store.FK_Company_OnlineSupport_Online_Support_Type">
+      <End Role="OnlineSupportType" EntitySet="OnlineSupportType" />
+      <End Role="CompanyOnlineSupport" EntitySet="CompanyOnlineSupport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Profile_Company" Association="Mobile.Data.Store.FK_Company_Profile_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="CompanyProfile" EntitySet="CompanyProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Company_Profile_Company_Profile_Property" Association="Mobile.Data.Store.FK_Company_Profile_Company_Profile_Property">
+      <End Role="CompanyProfileProperty" EntitySet="CompanyProfileProperty" />
+      <End Role="CompanyProfile" EntitySet="CompanyProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friends_System_User" Association="Mobile.Data.Store.FK_Friends_System_User">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friends_System_User1" Association="Mobile.Data.Store.FK_Friends_System_User1">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="Friends" EntitySet="Friends" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Product_Item_Category" Association="Mobile.Data.Store.FK_Item_Product_Item_Category">
+      <End Role="ProductCategory" EntitySet="ProductCategory" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manufacturer_Company" Association="Mobile.Data.Store.FK_Manufacturer_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Manufacturer" EntitySet="Manufacturer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Media_Category_Company" Association="Mobile.Data.Store.FK_Media_Category_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="MediaCategory" EntitySet="MediaCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Media_File_Company" Association="Mobile.Data.Store.FK_Media_File_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="MediaFile" EntitySet="MediaFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Media_File_Media_Category" Association="Mobile.Data.Store.FK_Media_File_Media_Category">
+      <End Role="MediaCategory" EntitySet="MediaCategory" />
+      <End Role="MediaFile" EntitySet="MediaFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_Message_Type" Association="Mobile.Data.Store.FK_Message_Message_Type">
+      <End Role="MessageType" EntitySet="MessageType" />
+      <End Role="Message" EntitySet="Message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Image_Media_Image" Association="Mobile.Data.Store.FK_Product_Image_Media_Image">
+      <End Role="MediaImage" EntitySet="MediaImage" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Image_Product" Association="Mobile.Data.Store.FK_Product_Image_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductImage" EntitySet="ProductImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_Company_Config_Company" Association="Mobile.Data.Store.FK_System_Company_Config_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SystemCompanyConfig" EntitySet="SystemCompanyConfig" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_Role_Permission_System_Permission" Association="Mobile.Data.Store.FK_System_Role_Permission_System_Permission">
+      <End Role="SystemPermission" EntitySet="SystemPermission" />
+      <End Role="SystemRolePermission" EntitySet="SystemRolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_Role_Permission_System_Roles" Association="Mobile.Data.Store.FK_System_Role_Permission_System_Roles">
+      <End Role="SystemRole" EntitySet="SystemRole" />
+      <End Role="SystemRolePermission" EntitySet="SystemRolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_Role_User_System_Roles" Association="Mobile.Data.Store.FK_System_Role_User_System_Roles">
+      <End Role="SystemRole" EntitySet="SystemRole" />
+      <End Role="SystemRoleUser" EntitySet="SystemRoleUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_Role_User_System_User" Association="Mobile.Data.Store.FK_System_Role_User_System_User">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="SystemRoleUser" EntitySet="SystemRoleUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_System_User_Company" Association="Mobile.Data.Store.FK_System_User_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Advertising">
+    <Key>
+      <PropertyRef Name="AdvertisingID" />
+    </Key>
+    <Property Name="AdvertisingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" MaxLength="512" />
+    <Property Name="Url" Type="nvarchar" MaxLength="256" />
+    <Property Name="Baner" Type="nvarchar" MaxLength="512" />
+    <Property Name="OrderIndex" Type="int" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2000" />
+    <Property Name="CreatedDate" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdvertisingCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+    <Property Name="CategoryName_En" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="LogNote" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="IsMenu" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ArticleID" />
+    </Key>
+    <Property Name="ArticleID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="SEOURL" Type="nvarchar" MaxLength="256" />
+    <Property Name="Abstract" Type="ntext" />
+    <Property Name="Abstract_En" Type="ntext" />
+    <Property Name="Body" Type="ntext" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="256" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="512" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="LogNote" Type="nvarchar" MaxLength="2000" />
+    <Property Name="TotalViews" Type="int" Nullable="false" />
+    <Property Name="TotalLikes" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArticleCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+    <Property Name="CategoryName_En" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Description_En" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="SEOURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderIndex" Type="int" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="LogNote" Type="nvarchar" />
+    <Property Name="RefCategoryID" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsMenu" Type="bit" Nullable="false" />
+    <Property Name="HasComment" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArticleComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleID" Type="bigint" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="256" />
+    <Property Name="SenderEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="SenderCompany" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Attribute">
+    <Key>
+      <PropertyRef Name="AttributeID" />
+    </Key>
+    <Property Name="AttributeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="AttributeName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="LogNote" Type="ntext" />
+  </EntityType>
+  <EntityType Name="AttributeValue">
+    <Key>
+      <PropertyRef Name="AttributeValueID" />
+    </Key>
+    <Property Name="AttributeValueID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AttributeID" Type="int" />
+    <Property Name="AttributeValue" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LogNote" Type="ntext" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="512" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="1000" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Website" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CompanyCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Key" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ExpiredDate" Type="datetime" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="IsRootSite" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyOnlineSupport">
+    <Key>
+      <PropertyRef Name="OnlineSupportID" />
+    </Key>
+    <Property Name="OnlineSupportID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="Nick" Type="nvarchar" MaxLength="50" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="OnlineSupportTypeID" Type="int" Nullable="false" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProfile">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+    <Property Name="PropertyValue" Type="ntext" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyProfileProperty">
+    <Key>
+      <PropertyRef Name="PropertyID" />
+    </Key>
+    <Property Name="PropertyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PropertyName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SenderName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SenderEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="512" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="QuestionTitle" Type="nvarchar" MaxLength="256" />
+    <Property Name="QuestionContent" Type="ntext" />
+    <Property Name="QuestionDate" Type="datetime" />
+    <Property Name="AnswerPerson" Type="int" />
+    <Property Name="AnswerContent" Type="ntext" />
+    <Property Name="AnswerDate" Type="datetime" />
+    <Property Name="IsAnswer" Type="bit" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="IsActived" Type="bit" />
+  </EntityType>
+  <EntityType Name="CustomerContact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="bigint" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Error">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ErrorName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="FriendRequest">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RequestBy" Type="bigint" Nullable="false" />
+    <Property Name="RequestUser" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Friends">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="FriendUserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FriendUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InputType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InputTypeName" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsCreateVoucher" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Instance">
+    <Key>
+      <PropertyRef Name="InstanceID" />
+    </Key>
+    <Property Name="InstanceID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="IsSerial" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstanceImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ImageID" Type="bigint" />
+    <Property Name="InstanceID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="InvitationFriend">
+    <Key>
+      <PropertyRef Name="InvitationID" />
+    </Key>
+    <Property Name="InvitationID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FromUser" Type="int" />
+    <Property Name="ToUser" Type="int" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ManufacturerName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IsDefault" Type="bit" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ParentCategory" Type="int" />
+    <Property Name="RefCategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+    <Property Name="CategoryName_En" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Description_En" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="LogNote" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="MediaFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="FileUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="FileTypeID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaFileType">
+    <Key>
+      <PropertyRef Name="MediaTypeID" />
+    </Key>
+    <Property Name="MediaTypeID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaImage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ImageBinary" Type="varbinary(max)" />
+    <Property Name="MimeType" Type="varchar" MaxLength="40" />
+    <Property Name="SeoFileName" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Mobile.dbo.MediaImageCategory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MediaImageCategory">
+    <Key>
+      <PropertyRef Name="OrderIndex" />
+      <PropertyRef Name="IsActived" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+    <Property Name="IsActived" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreateedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SendByUserID" Type="int" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="MessageTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageFolder">
+    <Key>
+      <PropertyRef Name="FolderID" />
+    </Key>
+    <Property Name="FolderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FolderName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MessageRecipient">
+    <Key>
+      <PropertyRef Name="MessageRecipientID" />
+    </Key>
+    <Property Name="MessageRecipientID" Type="bigint" Nullable="false" />
+    <Property Name="RecipientUser" Type="int" Nullable="false" />
+    <Property Name="MessageID" Type="bigint" Nullable="false" />
+    <Property Name="MessageFolderID" Type="int" Nullable="false" />
+    <Property Name="IsReaded" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageType">
+    <Key>
+      <PropertyRef Name="MessageType" />
+    </Key>
+    <Property Name="MessageType" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsActived" Type="bit" Nullable="false" />
+    <Property Name="LogNote" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="OnlineSupportType">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Pattern" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="SEOURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="ProductName_En" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description_En" Type="ntext" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="OrderIndex" Type="bigint" Nullable="false" />
+    <Property Name="TotalViews" Type="int" Nullable="false" />
+    <Property Name="TotalLikes" Type="int" Nullable="false" />
+    <Property Name="ManufacturerID" Type="int" />
+    <Property Name="IsInHomepage" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="LogNote" Type="ntext" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RefCategoryID" Type="int" />
+    <Property Name="ParentCategoryID" Type="int" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="256" />
+    <Property Name="CategoryName_En" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Description_En" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="256" />
+    <Property Name="SEOURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderIndex" Type="int" Nullable="false" />
+    <Property Name="IsActived" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="LogNote" Type="nvarchar" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductImage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ImageID" Type="bigint" Nullable="false" />
+    <Property Name="ProductID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RepairVoucher">
+    <Key>
+      <PropertyRef Name="RepairVoucherId" />
+    </Key>
+    <Property Name="RepairVoucherId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RepairVoucherCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CustomerId" Type="bigint" Nullable="false" />
+    <Property Name="TotalDevices" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="RepairVoucherDetail">
+    <Key>
+      <PropertyRef Name="RepairVoucherDetailId" />
+    </Key>
+    <Property Name="RepairVoucherDetailId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RepairVoucherId" Type="bigint" Nullable="false" />
+    <Property Name="DeviceId" Type="bigint" Nullable="false" />
+    <Property Name="IsWarranty" Type="bit" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="15" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Solution">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="SolutionName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SolutionError">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="ErrorID" Type="int" Nullable="false" />
+    <Property Name="SolutionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatisticVisitor">
+    <Key>
+      <PropertyRef Name="VisitorStatisticID" />
+    </Key>
+    <Property Name="VisitorStatisticID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="Month" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemCompanyConfig">
+    <Key>
+      <PropertyRef Name="ConfigID" />
+    </Key>
+    <Property Name="ConfigID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ConfigName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ConfigValue" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemConfig">
+    <Key>
+      <PropertyRef Name="ConfigID" />
+    </Key>
+    <Property Name="ConfigID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ConfigName" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ConfigValue" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsActived" Type="bit" Nullable="false" />
+    <Property Name="LogNote" Type="ntext" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SystemModule">
+    <Key>
+      <PropertyRef Name="ModuleID" />
+    </Key>
+    <Property Name="ModuleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleName" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsActived" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemPermission">
+    <Key>
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="PermissionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PermissionName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemRole">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="512" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsActived" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemRolePermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="PermissionID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemRoleUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="128" />
+    <Property Name="Mobi" Type="nvarchar" MaxLength="128" />
+    <Property Name="Address" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Avatar" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsRequirePwdChange" Type="bit" Nullable="false" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="LockedDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="InvitatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="SystemUserPermission">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Warranty">
+    <Key>
+      <PropertyRef Name="WarrantyId" />
+    </Key>
+    <Property Name="WarrantyId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="25" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="WarrantyDate" Type="datetime" />
+    <Property Name="OutputVoucherId" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="DeletedDate" Type="datetime" />
+    <Property Name="DeletedBy" Type="int" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="WarrantyCount" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Article_Comment_Article">
+    <End Role="Article" Type="Mobile.Data.Store.Article" Multiplicity="0..1" />
+    <End Role="ArticleComment" Type="Mobile.Data.Store.ArticleComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ArticleID" />
+      </Principal>
+      <Dependent Role="ArticleComment">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_OnlineSupport_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="CompanyOnlineSupport" Type="Mobile.Data.Store.CompanyOnlineSupport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyOnlineSupport">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_OnlineSupport_Online_Support_Type">
+    <End Role="OnlineSupportType" Type="Mobile.Data.Store.OnlineSupportType" Multiplicity="1" />
+    <End Role="CompanyOnlineSupport" Type="Mobile.Data.Store.CompanyOnlineSupport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OnlineSupportType">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="CompanyOnlineSupport">
+        <PropertyRef Name="OnlineSupportTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Profile_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="CompanyProfile" Type="Mobile.Data.Store.CompanyProfile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="CompanyProfile">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Company_Profile_Company_Profile_Property">
+    <End Role="CompanyProfileProperty" Type="Mobile.Data.Store.CompanyProfileProperty" Multiplicity="1" />
+    <End Role="CompanyProfile" Type="Mobile.Data.Store.CompanyProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyProfileProperty">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="CompanyProfile">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friends_System_User">
+    <End Role="SystemUser" Type="Mobile.Data.Store.SystemUser" Multiplicity="1" />
+    <End Role="Friends" Type="Mobile.Data.Store.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friends_System_User1">
+    <End Role="SystemUser" Type="Mobile.Data.Store.SystemUser" Multiplicity="1" />
+    <End Role="Friends" Type="Mobile.Data.Store.Friends" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Friends">
+        <PropertyRef Name="FriendUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Product_Item_Category">
+    <End Role="ProductCategory" Type="Mobile.Data.Store.ProductCategory" Multiplicity="1" />
+    <End Role="Product" Type="Mobile.Data.Store.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manufacturer_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="Manufacturer" Type="Mobile.Data.Store.Manufacturer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Manufacturer">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Media_Category_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="MediaCategory" Type="Mobile.Data.Store.MediaCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="MediaCategory">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Media_File_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="MediaFile" Type="Mobile.Data.Store.MediaFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="MediaFile">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Media_File_Media_Category">
+    <End Role="MediaCategory" Type="Mobile.Data.Store.MediaCategory" Multiplicity="1" />
+    <End Role="MediaFile" Type="Mobile.Data.Store.MediaFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MediaCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="MediaFile">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_Message_Type">
+    <End Role="MessageType" Type="Mobile.Data.Store.MessageType" Multiplicity="1" />
+    <End Role="Message" Type="Mobile.Data.Store.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageType">
+        <PropertyRef Name="MessageType" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="MessageTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Image_Media_Image">
+    <End Role="MediaImage" Type="Mobile.Data.Store.MediaImage" Multiplicity="1" />
+    <End Role="ProductImage" Type="Mobile.Data.Store.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MediaImage">
+        <PropertyRef Name="ImageID" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Image_Product">
+    <End Role="Product" Type="Mobile.Data.Store.Product" Multiplicity="1" />
+    <End Role="ProductImage" Type="Mobile.Data.Store.ProductImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_Company_Config_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="1" />
+    <End Role="SystemCompanyConfig" Type="Mobile.Data.Store.SystemCompanyConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="SystemCompanyConfig">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_Role_Permission_System_Permission">
+    <End Role="SystemPermission" Type="Mobile.Data.Store.SystemPermission" Multiplicity="1" />
+    <End Role="SystemRolePermission" Type="Mobile.Data.Store.SystemRolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemPermission">
+        <PropertyRef Name="PermissionID" />
+      </Principal>
+      <Dependent Role="SystemRolePermission">
+        <PropertyRef Name="PermissionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_Role_Permission_System_Roles">
+    <End Role="SystemRole" Type="Mobile.Data.Store.SystemRole" Multiplicity="1" />
+    <End Role="SystemRolePermission" Type="Mobile.Data.Store.SystemRolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemRole">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="SystemRolePermission">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_Role_User_System_Roles">
+    <End Role="SystemRole" Type="Mobile.Data.Store.SystemRole" Multiplicity="0..1" />
+    <End Role="SystemRoleUser" Type="Mobile.Data.Store.SystemRoleUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemRole">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="SystemRoleUser">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_Role_User_System_User">
+    <End Role="SystemUser" Type="Mobile.Data.Store.SystemUser" Multiplicity="0..1" />
+    <End Role="SystemRoleUser" Type="Mobile.Data.Store.SystemRoleUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="SystemRoleUser">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_System_User_Company">
+    <End Role="Company" Type="Mobile.Data.Store.Company" Multiplicity="0..1" />
+    <End Role="SystemUser" Type="Mobile.Data.Store.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

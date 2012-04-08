@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Mobile.Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="/Scripts/jquery-1.5.1.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"/>
+</head>
+<body>
+<form runat="server" id="formSite">
+    <ajax:ToolkitScriptManager runat="server" ID="ScriptManager1" ScriptMode="Release"
+        EnableScriptGlobalization="true">
+    </ajax:ToolkitScriptManager>
+    <div class="content_wrapper">
+        <div id="header">
+            <div id="logo">
+                <img src="/App_Themes/Admin/images/logo.png" alt="logo"/>
+            </div>
+            <div id="search">
+                <input type="text" id="q" name="q" title="Search" class="search noshadow"/>
+            </div>
+		    <div id="account_info">
+            <% if (Mobile.Core.Security.MobileAuthentication.IsAuthenticated) {%>
+                Xin chào <a href=""><%= Mobile.Core.Security.MobileAuthentication.User.FullName %></a>
+                <% } else { %>
+                Xin chào bạn
+            <% } %>
+		    </div>
+	    </div>
+        <a href="javascript:;" id="show_menu" title="Show slidebar">&raquo;</a>
+        <div id="left_menu">
+		    <a href="javascript:;" id="hide_menu" title="Hide slidebar">&laquo;</a>
+        
+            <script>
+                $(function () {
+                    $("#main_menu").accordion({ collapsible: true, autoHeight: false });
+                });
+            </script>
+		    <ul id="main_menu">
+			    <li><a href="/"><img src="/App_Themes/Admin/images/icon_home.png" alt="Home"/>Home</a></li>
+			    <li>
+				    <a id="menu_pages" href=""><img src="/App_Themes/Admin/images/icon_pages.png" alt="Pages"/>Pages</a>
+				    <ul>
+					    <li><a href="">Add new Pages</a></li>
+					    <li><a href="">Edit Pages</a></li>
+				    </ul>
+			    </li>
+			    <li>
+				    <a href=""><img src="/App_Themes/Admin/images/icon_posts.png" alt="Posts"/>Posts</a>
+			    </li>
+			    <li>
+				    <a href=""><img src="/App_Themes/Admin/images/icon_media.png" alt="Media"/>Media</a>
+				    <ul>
+					    <li><a href="">Add new Media</a></li>
+					    <li><a href="">Edit Media</a></li>
+					    <li><a href="">Delete Media</a></li>
+				    </ul>
+			    </li>
+			    <li>
+				    <a href=""><img src="/App_Themes/Admin/images/icon_users.png" alt="Users"/>Membership</a>
+				    <ul>
+					    <li><a href="/pages/membership/user.aspx">User</a></li>
+                        <li><a href="/pages/membership/role.aspx">Role</a></li>
+                        <li><a href="/pages/membership/permission.aspx">Permission</a></li>
+				    </ul>	
+			    </li>
+                <li>
+                    <a href="javascript:;">Hệ thống</a>
+                    <ul>
+                        <li><a href="@Url.Action("Index","Configuration")">Cấu hình hệ thống</a></li>
+                    </ul>
+                </li>
+		    </ul>
+	    </div>
+        <div id="content">
+            <div class="inner">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+
+            <br class="clear"/>
+            <div id="footer">
+		        &copy; Copyright 2012 by Kamiken - Hua Dai Phong
+	        </div>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>
+<script src="/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+<script src="/Scripts/custom.js" type="text/javascript"></script>

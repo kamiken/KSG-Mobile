@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="permissionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPermissionResult" type="tns:SystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemPermission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PermissionID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PermissionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRolePermissions" type="tns:ArrayOfSystemRolePermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSystemRolePermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SystemRolePermission" nillable="true" type="tns:SystemRolePermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SystemRolePermission">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PermissionID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemPermission" type="tns:SystemPermission" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRole" type="tns:SystemRole" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SystemRole">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RoleID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActived" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRolePermissions" type="tns:ArrayOfSystemRolePermission" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRoleUsers" type="tns:ArrayOfSystemRoleUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSystemRoleUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SystemRoleUser" nillable="true" type="tns:SystemRoleUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SystemRoleUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoleID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRole" type="tns:SystemRole" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemUser" type="tns:SystemUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SystemUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Avatar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRequirePwdChange" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLoginDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LockedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InvitatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemRoleUsers" type="tns:ArrayOfSystemRoleUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemUser1" type="tns:ArrayOfSystemUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemUsers" type="tns:ArrayOfSystemUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Company">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActived" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiredDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRootSite" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyOnlineSupports" type="tns:ArrayOfCompanyOnlineSupport" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyProfile" type="tns:CompanyProfile" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manufacturers" type="tns:ArrayOfManufacturer" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaCategories" type="tns:ArrayOfMediaCategory" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaFiles" type="tns:ArrayOfMediaFile" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemCompanyConfigs" type="tns:ArrayOfSystemCompanyConfig" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemUsers" type="tns:ArrayOfSystemUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompanyOnlineSupport">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompanyOnlineSupport" nillable="true" type="tns:CompanyOnlineSupport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompanyOnlineSupport">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineSupportID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nick" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActived" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnlineSupportTypeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnlineSupportType" type="tns:OnlineSupportType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OnlineSupportType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pattern" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyOnlineSupports" type="tns:ArrayOfCompanyOnlineSupport" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompanyProfile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyProfileProperty" type="tns:CompanyProfileProperty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompanyProfileProperty">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PropertyName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyProfiles" type="tns:ArrayOfCompanyProfile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompanyProfile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompanyProfile" nillable="true" type="tns:CompanyProfile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfManufacturer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Manufacturer" nillable="true" type="tns:Manufacturer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Manufacturer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ManufacturerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ManufacturerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDefault" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActived" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMediaCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MediaCategory" nillable="true" type="tns:MediaCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MediaCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentCategory" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefCategoryID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName_En" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description_En" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderIndex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsActived" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModifiedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeletedBy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogNote" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaFiles" type="tns:ArrayOfMediaFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMediaFile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MediaFile" nillable="true" type="tns:MediaFile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MediaFile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDeleted" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FileTypeID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaCategory" type="tns:MediaCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSystemCompanyConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SystemCompanyConfig" nillable="true" type="tns:SystemCompanyConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SystemCompanyConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConfigID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfigName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConfigValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedBy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ModifiedBy" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="tns:Company" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSystemUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SystemUser" nillable="true" type="tns:SystemUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPermissions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isDeleted" nillable="true" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPermissionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPermissionsResult" type="tns:ArrayOfSystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSystemPermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SystemPermission" nillable="true" type="tns:SystemPermission" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPermissionPaging">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="keyword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isDeleted" nillable="true" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="pagingInput" type="tns:PagingInput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PagingInput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PageIndex" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" default="10" name="PageSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortDirection" type="tns:SortDirection" />
+          <s:element minOccurs="0" maxOccurs="1" name="SortPropertyName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="SortDirection">
+        <s:restriction base="s:string">
+          <s:enumeration value="Ascending" />
+          <s:enumeration value="Descending" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetPermissionPagingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPermissionPagingResult" type="tns:PagedResultOfSystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PagedResultOfSystemPermission">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Results" type="tns:ArrayOfSystemPermission" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowCount" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPermission" type="tns:SystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddPermissionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="permissionId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePermissionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPermission" type="tns:SystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePermissionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPermissionsByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPermissionsByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPermissionsByUserIdResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPermissionByRoleId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPermissionByRoleIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPermissionByRoleIdResult" type="tns:ArrayOfSystemPermission" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="permissionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsExistPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsExistPermissionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPermission" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPermissions" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionPagingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPermissionPaging" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionPagingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPermissionPagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPermission" />
+  </wsdl:message>
+  <wsdl:message name="AddPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePermission" />
+  </wsdl:message>
+  <wsdl:message name="DeletePermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePermission" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionsByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPermissionsByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionsByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPermissionsByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionByRoleIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPermissionByRoleId" />
+  </wsdl:message>
+  <wsdl:message name="GetPermissionByRoleIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPermissionByRoleIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsExistPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:IsExistPermission" />
+  </wsdl:message>
+  <wsdl:message name="IsExistPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:IsExistPermissionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PermissionServiceSoap">
+    <wsdl:operation name="GetPermission">
+      <wsdl:input message="tns:GetPermissionSoapIn" />
+      <wsdl:output message="tns:GetPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <wsdl:input message="tns:GetPermissionsSoapIn" />
+      <wsdl:output message="tns:GetPermissionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionPaging">
+      <wsdl:input message="tns:GetPermissionPagingSoapIn" />
+      <wsdl:output message="tns:GetPermissionPagingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <wsdl:input message="tns:AddPermissionSoapIn" />
+      <wsdl:output message="tns:AddPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePermission">
+      <wsdl:input message="tns:DeletePermissionSoapIn" />
+      <wsdl:output message="tns:DeletePermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePermission">
+      <wsdl:input message="tns:UpdatePermissionSoapIn" />
+      <wsdl:output message="tns:UpdatePermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionsByUserId">
+      <wsdl:input message="tns:GetPermissionsByUserIdSoapIn" />
+      <wsdl:output message="tns:GetPermissionsByUserIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionByRoleId">
+      <wsdl:input message="tns:GetPermissionByRoleIdSoapIn" />
+      <wsdl:output message="tns:GetPermissionByRoleIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistPermission">
+      <wsdl:input message="tns:IsExistPermissionSoapIn" />
+      <wsdl:output message="tns:IsExistPermissionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PermissionServiceSoap" type="tns:PermissionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPermission">
+      <soap:operation soapAction="http://tempuri.org/GetPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <soap:operation soapAction="http://tempuri.org/GetPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionPaging">
+      <soap:operation soapAction="http://tempuri.org/GetPermissionPaging" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <soap:operation soapAction="http://tempuri.org/AddPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePermission">
+      <soap:operation soapAction="http://tempuri.org/DeletePermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePermission">
+      <soap:operation soapAction="http://tempuri.org/UpdatePermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionsByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetPermissionsByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionByRoleId">
+      <soap:operation soapAction="http://tempuri.org/GetPermissionByRoleId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistPermission">
+      <soap:operation soapAction="http://tempuri.org/IsExistPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PermissionServiceSoap12" type="tns:PermissionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPermission">
+      <soap12:operation soapAction="http://tempuri.org/GetPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissions">
+      <soap12:operation soapAction="http://tempuri.org/GetPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionPaging">
+      <soap12:operation soapAction="http://tempuri.org/GetPermissionPaging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <soap12:operation soapAction="http://tempuri.org/AddPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePermission">
+      <soap12:operation soapAction="http://tempuri.org/DeletePermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePermission">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionsByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetPermissionsByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionByRoleId">
+      <soap12:operation soapAction="http://tempuri.org/GetPermissionByRoleId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistPermission">
+      <soap12:operation soapAction="http://tempuri.org/IsExistPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PermissionService">
+    <wsdl:port name="PermissionServiceSoap" binding="tns:PermissionServiceSoap">
+      <soap:address location="http://localhost:9040/PermissionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PermissionServiceSoap12" binding="tns:PermissionServiceSoap12">
+      <soap12:address location="http://localhost:9040/PermissionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

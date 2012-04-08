@@ -1,0 +1,25 @@
+﻿@{    
+    Layout = @ViewBag.Layout;
+}
+@if (false)
+{    
+<script src="/Scripts/jquery-1.5.1-vsdoc.js" type="text/javascript"></script>
+}
+<!-- Bang thong bao -->
+<div id="message_board" class="message">
+    <ul class="error"></ul>
+    <ul class="warning"></ul>
+</div>
+
+<!-- Danh sach Permission -->
+<div>
+    @Html.Partial("_PermissionList")
+</div>
+<input type="button" id="btnCreatePermission"/>
+<div id="permission_form" title="Thông tin quyền">
+    @Html.Partial("_PermissionForm")
+</div>
+
+
+<script src="/Scripts/Mobile/mobile-permission.js" type="text/javascript"></script>
+

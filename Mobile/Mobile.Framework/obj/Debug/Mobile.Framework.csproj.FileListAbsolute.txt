@@ -1,0 +1,6 @@
+E:\Working\KSG\Project\Mobile\Mobile.Framework\bin\Debug\Mobile.Framework.dll
+E:\Working\KSG\Project\Mobile\Mobile.Framework\bin\Debug\Mobile.Framework.pdb
+E:\Working\KSG\Project\Mobile\Mobile.Framework\bin\Debug\EntityFramework.dll
+E:\Working\KSG\Project\Mobile\Mobile.Framework\obj\Debug\ResolveAssemblyReference.cache
+E:\Working\KSG\Project\Mobile\Mobile.Framework\obj\Debug\Mobile.Framework.dll
+E:\Working\KSG\Project\Mobile\Mobile.Framework\obj\Debug\Mobile.Framework.pdb
